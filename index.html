@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Marker AR Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Marker 1: Hiro Marker -->
+        <a-marker preset="hiro">
+            <a-image src="./assets/stage1.jpg" position="0 0.5 0" height="1" width="1"></a-image>
+        </a-marker>
+
+        <!-- Marker 2: Kanji Marker -->
+        <a-marker preset="kanji">
+            <!--<a-video src="https://your-video-url-here.mp4" position="0 0.5 0" height="1" width="1"></a-video> -->
+            <a-image src="./assets/stage1.jpg" position="0 0.5 0" height="1" width="1"></a-image>
+        </a-marker>
+
+        <!-- Marker 3: Custom Marker -->
+        <a-marker type="pattern" url="path-to-your-custom-marker.patt">
+            <a-image src="./assets/stage3.jpg" position="0 0.5 0" height="1" width="1"></a-image>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
