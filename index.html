@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,20 +9,56 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam; sourceWidth: 640; sourceHeight: 480; displayWidth: 640; displayHeight: 480; detectionMode: mono_and_matrix;">
-        <!-- Marker 1: Hiro Marker -->
+        <!-.- Marker 1: Hiro Marker -.->
         <a-marker type="pattern" url="./assets/marker1.patt">
             <a-image src="./assets/stage1.jpg" position="0 0.5 0" height="1" width="1"></a-image>
         </a-marker>
 
-        <!-- Marker 2: Kanji Marker -->
+        <!-.- Marker 2: Kanji Marker -.->
         <a-marker preset="kanji">
-            <!--<a-video src="https://your-video-url-here.mp4" position="0 0.5 0" height="1" width="1"></a-video> -->
+            <!-.-<a-video src="https://your-video-url-here.mp4" position="0 0.5 0" height="1" width="1"></a-video> -.->
             <a-image src="./assets/stage1.jpg" position="0 0.5 0" height="1" width="1"></a-image>
         </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html> -->
 
-        <!-- Marker 3: Custom Marker -->
-        <a-marker type="pattern" url="path-to-your-custom-marker.patt">
-            <a-image src="./assets/stage3.jpg" position="0 0.5 0" height="1" width="1"></a-image>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Multi-Marker AR Example</title>
+    <!-- Updated to latest stable versions of A-Frame and AR.js -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded
+             arjs="sourceType: webcam; 
+                   debugUIEnabled: false;
+                   detectionMode: mono_and_matrix;
+                   matrixCodeType: 3x3;">
+        
+        <!-- Hiro Marker -->
+        <a-marker preset="hiro">
+            <a-image src="./assets/stage1.jpg" 
+                     position="0 0.5 0" 
+                     rotation="-90 0 0"
+                     width="1" 
+                     height="1">
+            </a-image>
+        </a-marker>
+        
+        <!-- Kanji Marker -->
+        <a-marker preset="kanji">
+            <a-image src="./assets/stage2.jpg" 
+                     position="0 0.5 0" 
+                     rotation="-90 0 0"
+                     width="1" 
+                     height="1">
+            </a-image>
         </a-marker>
 
         <a-entity camera></a-entity>
